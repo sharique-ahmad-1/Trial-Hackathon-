@@ -22,7 +22,7 @@ import {
   Cpu
 } from 'lucide-react';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://croppilot-backend.onrender.com';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('advisor');
