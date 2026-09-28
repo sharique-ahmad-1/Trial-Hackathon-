@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-scale: 1rem;
+    --touch-min: 48px;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 transition-colors duration-200 antialiased;
+    font-size: 1.125rem; /* 18px readable default */
+    line-height: 1.6;
+  }
+
+  /* High Contrast Senior Mode */
+  body.high-contrast {
+    @apply bg-black text-white;
+  }
+
+  body.high-contrast .card-surface {
+    @apply bg-zinc-950 border-2 border-yellow-400 text-white shadow-none;
+  }
+
+  body.high-contrast button {
+    @apply border-2 border-white;
+  }
+
+  body.high-contrast .text-muted {
+    @apply text-yellow-300 !important;
+  }
+
+  /* Extra Large Readable Text Mode */
+  body.large-text {
+    font-size: 1.35rem; /* ~22px base */
+    line-height: 1.75;
+  }
+
+  body.large-text h1 {
+    font-size: 2.5rem;
+  }
+
+  body.large-text h2 {
+    font-size: 2rem;
+  }
+
+  body.large-text h3 {
+    font-size: 1.75rem;
+  }
+
+  /* Focus ring for accessibility */
+  *:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 3px;
+  }
+}
+
+/* Accessible touch targets */
+.touch-target {
+  min-height: 48px;
+  min-width: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
